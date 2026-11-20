@@ -121,6 +121,21 @@
             img.responsive-image {
                 width: 100% !important;
             }
+
+            .footer-mobile-image {
+                display: none !important;
+                mso-hide: all;
+            }
+
+            @media only screen and (max-width: 599px) {
+                .footer-desktop-image {
+                    display: none !important;
+                    mso-hide: all;
+                }
+                .footer-mobile-image {
+                    display: block !important;
+                }
+            }
             
             /* 600 RESET */
             @media only screen and (min-width: 600px){
@@ -181,7 +196,22 @@
                 body, th, td, h1, h2, h3, h4, div, p { color:#FFFFFF !important; }
                 html, body, .main-table, .main-td, .keep-as-bg, .keep-as-bg * { background-color: #353535 !important; }
                 div, table, th, tr, td { background-color:#171717 !important; }
-                .inner-td, .inner-td div, .inner-td th, .inner-td tr, .inner-td td { background-color: #11192E !important; }
+                .inner-td, .inner-td table, .inner-td div, .inner-td th, .inner-td tr, .inner-td td {
+                    background-color: #11192E !important;
+                    background-image: linear-gradient(#11192E, #11192E) !important;
+                }
+                .text-dm {
+                    color: #11192E !important;
+                    background-image: linear-gradient(#11192E, #11192E) !important;
+                }
+                @supports (-webkit-background-clip: text) {
+                    .text-dm {
+                          display: inline-block;
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+                }
             }
           
            
@@ -202,7 +232,7 @@
                         <tr>
                             <td align="center" valign="top" style="padding: 0; margin: 0">
 
-                            <!-- VIEW IN BROWSER -->
+                            <!-- TITULO -->
                             <table class="container-responsive keep-as-bg" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#f4f4f4" style="background-color: #f4f4f4; width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                                 <tr>
                                     <td width="6%" style="width: 6%">&nbsp;</td>
@@ -215,8 +245,7 @@
                                     <td style="padding: 0; margin: 0;">&nbsp;</td>
                                     <td align="center" valign="top" style="padding: 0; margin: 0;">
                                         <p style="color: #808890; font-size: 10px; line-height: 12px; mso-line-height-rule: exactly; font-family: 'MyFont', Arial, Helvetica, sans-serif; margin: 0; padding: 0;">
-                                            Si no visualizas correctamente este mensaje,
-                                            <a alias="Previsualizar mensaje" href="%%view_email_url%%" name="generico" target="_blank" style="text-decoration: underline; color: #808890; font-size: 10px; line-height: 12px; mso-line-height-rule: exactly; font-family: 'MyFont', Arial, Helvetica, sans-serif; margin: 0; padding: 0;">pulsa aqu&iacute;</a>.
+                                            DARKMODE TRIES 
                                         </p>
                                     </td>
                                     <td style="padding: 0; margin: 0;">&nbsp;</td>
@@ -321,7 +350,7 @@
                                                                         </td>
                                                                         <td width="20" style="width: 20px;">&nbsp;</td>
                                                                         <td align="right" valign="middle" style="padding: 0; margin: 0;">
-                                                                            <p class="text-responsive" style="margin: 0; padding: 0; color: #001e50; font-weight: bold; font-size: 17px; line-height: 15px; font-family: 'MyFont', Arial, Helvetica, sans-serif; text-align: right;">
+                                                                            <p class="text-responsive text-dm" style="margin: 0; padding: 0; color: #001e50; font-weight: bold; font-size: 17px; line-height: 15px; font-family: 'MyFont', Arial, Helvetica, sans-serif; text-align: right;">
                                                                                 Conducir es solo el principio
                                                                             </p>
                                                                         </td>
@@ -347,7 +376,7 @@
                                                         <tr>
                                                             <td style="padding: 0; margin: 0;">&nbsp;</td>
                                                             <td align="center" valign="top" style="padding: 0; margin: 0;">
-                                                                <p style="margin: 0; padding: 0; color: #001e50; font-weight: normal; font-size: 14px; line-height: 17px; font-family: 'MyFont', Arial, Helvetica, sans-serif; text-align: left;">
+                                                                <p class="text-dm" style="margin: 0; padding: 0; color: #001e50; font-weight: normal; font-size: 14px; line-height: 17px; font-family: 'MyFont', Arial, Helvetica, sans-serif; text-align: left;">
                                                                     Siempre contigo,<br> <b>Team Volkswagen</b>
                                                                 </p>
                                                             </td>
@@ -517,6 +546,171 @@
                                                                 <p style="margin: 0; padding: 0; color: #001e50; font-weight: normal; font-size: 14px; line-height: 17px; font-family: 'MyFont', Arial, Helvetica, sans-serif; text-align: left;">
                                                                     Siempre contigo,<br> <b>Team Volkswagen</b>
                                                                 </p>
+                                                            </td>
+                                                            <td style="padding: 0; margin: 0;">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding: 0; margin: 0;">&nbsp;</td>
+                                                            <td height="20" style="height: 20px; font-size: 20px; line-height: 20px;">&nbsp;</td>
+                                                            <td style="padding: 0; margin: 0;">&nbsp;</td>
+                                                        </tr>
+                                                    </table>
+                                                    <!-- %%[ ENDIF ]%% -->
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="20" style="line-height: 1px">&nbsp;</td>
+                                </tr>
+                            </table>
+
+                            <!-- APARTADO TITULO -->
+                            <table class="container-responsive keep-as-bg" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#f4f4f4" style="background-color: #f4f4f4; width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                                           <tr>
+                                                               <td width="6%" style="width: 6%">&nbsp;</td>
+                                                               <td height="15" style="height: 15px; font-size: 15px; line-height: 15px;">&nbsp;</td>
+                                                               <td width="6%" style="width: 6%">&nbsp;</td>
+                                                           </tr>
+                           
+                                                           <!-- MAIN CONTENT -->
+                                                           <tr>
+                                                               <td style="padding: 0; margin: 0;">&nbsp;</td>
+                                                               <td align="center" valign="top" style="padding: 0; margin: 0;">
+                                                                   <p style="color: #808890; font-size: 10px; line-height: 12px; mso-line-height-rule: exactly; font-family: 'MyFont', Arial, Helvetica, sans-serif; margin: 0; padding: 0;">
+                                                                        FORZADO LIGHTMODE EN DARKMODE BACKGROUND-LINEAR GRADIENT && DISPLAYS
+                                                                   </p>
+                                                               </td>
+                                                               <td style="padding: 0; margin: 0;">&nbsp;</td>
+                                                           </tr>
+                                                           <tr>
+                                                               <td style="padding: 0; margin: 0;">&nbsp;</td>
+                                                               <td height="15" style="height: 15px; font-size: 15px; line-height: 15px;">&nbsp;</td>
+                                                               <td style="padding: 0; margin: 0;">&nbsp;</td>
+                                                           </tr>
+                            </table>
+
+                              <!-- HEADER CLUB / NO CLUB -->
+                            <table class="container-responsive" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#EBE5DC" style="background-color: #EBE5DC; background-image: linear-gradient(#EBE5DC, #EBE5DC);  width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+                                <tr>
+                                    <td align="center" valign="middle" style="padding: 0; margin: 0">
+                                        <!-- %%[ IF @IsClubVW == "True" THEN ]%% -->
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#EBE5DC" style="background-color: #EBE5DC; background-image: linear-gradient(#EBE5DC, #EBE5DC);  width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+                                         
+                                        <tr>
+                                            <td height="30" style="height: 30px; font-size: 30px; line-height: 30px">&nbsp;</td>
+                                            <td width="6%" style="width: 6%">&nbsp;</td>
+                                        </tr>
+                                          <!-- MAIN CONTENT -->
+                                          <tr>
+                                            <td align="center" valign="top" style="padding: 0; margin: 0">
+                                              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+                                                <tr>
+                                                  <td align="left" valign="middle" style="padding: 0; margin: 0">
+                                                    <!-- IMAGE -->
+                                                    <!-- %%[ SET @logoVWClubHeader = concat('https://www.volkswagen.es/es/clientes/beneficios-club-volkswagen.html?adchan=em&country=ES&language=es&campaign=', @campaign, '&publisher=VW&adpl=&adlid=', @adlid, '&adplt=body&format=Image&adpay=non-paid&adcr=logoVWClubHeader&adap=SD|', Format(SystemDateToLocalDate(Now()), "dd/MM/yyyy HH:mm:ss"), '') ]%% -->
+                                                    <a alias="Logo Volkswagen" name="image" href="%%=redirectTo(@logoVWClubHeader)=%%" style="text-decoration: none">
+                                                      <img alt="Logo Volkswagen" width="193" style="width: 100%; max-width: 193px" src="https://crm.volkswagen.es/email/2026/marca/t_cross_tactics/img/footer_capsule.png">
+                                                    </a>
+                                                  </td>
+                                                  <td width="20" style="width: 20px">&nbsp;</td>
+                                                  <td align="right" valign="middle" style="padding: 0; margin: 0;">
+                                                       <!-- CTA -->
+                                                       <!-- %%[ SET @urlMiGuantera = concat('https://www.volkswagen.es/es/clientes/mi-club-volkswagen.html?adchan=em&country=ES&language=es&campaign=', @campaign, '&publisher=VW&adpl=&adlid=', @adlid, '&adplt=body&format=cta&adpay=non-paid&adcr=url-mi-guantera&adap=SD|', Format(SystemDateToLocalDate(Now()), "dd/MM/yyyy HH:mm:ss"), '') ]%% -->
+                                                         <a alias="Mi guantera digital" name="image" href="%%=redirectTo(@urlMiGuantera)=%%" style="text-decoration: none;">
+                                                           <img alt="Mi guantera digital" width="180" style="width: 100%; max-width: 180px;" src="https://crm.volkswagen.es/email/2026/marca/t_cross_tactics/img/cta_mi_guantera.png">
+                                                       </a>
+                                                    </td>
+                                                </tr>
+                                              </table>
+                                            </td>
+                                            <td style="padding: 0; margin: 0">&nbsp;</td>
+                                          </tr>
+                                          <tr>
+                                            <td height="30" style="height: 30px; font-size: 30px; line-height: 30px">&nbsp;</td>
+                                            <td style="padding: 0; margin: 0">&nbsp;</td>
+                                          </tr>
+                                        </table>
+                                        <!-- %%[ ELSE ]%% -->
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#EBE5DC" style="background-color: #EBE5DC; background-image: linear-gradient(#EBE5DC, #EBE5DC);  width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+                                          <tr>
+                                            <td align="center" valign="top" style="padding: 0; margin: 0">
+                                              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#EBE5DC" style="background-color: #EBE5DC;  background-image: linear-gradient(#EBE5DC, #EBE5DC);  width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+                                                <!-- MAIN CONTENT -->
+                                                <tr>
+                                                  <td align="center" valign="top" style="padding: 0; margin: 0">
+                                                    <!-- IMAGE -->
+                                                    <!-- %%[ SET @urlHeaderNoClub = concat('https://www.volkswagen.es/es.html?adchan=em&country=ES&language=es&campaign=', @campaign, '&publisher=VW&adpl=&adlid=', @adlid, '&adplt=body&format=image&adpay=non-paid&adcr=url-header-no-club&adap=SD|', Format(SystemDateToLocalDate(Now()), "dd/MM/yyyy HH:mm:ss"), '') ]%% -->
+                                                    <a alias="Volkswagen" name="image" href="%%=redirectTo(@urlHeaderNoClub)=%%" style="text-decoration: none">
+                                                      <img alt="Volkswagen" width="100%" style="width: 100% ;max-width:600px;" src="https://crm.volkswagen.es/email/2026/marca/t_cross_tactics/img/header_capsule.png">
+                                                    </a>
+                                                  </td>
+                                                </tr>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                        <!-- %%[ ENDIF ]%% -->
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- FOOTER -->
+                            <table role="presentation" width="100%"  cellpadding="0" cellspacing="0" border="0" align="center" style="background-color: #EBE5DC; background-image: linear-gradient(#EBE5DC, #EBE5DC); ">
+                                <tr>
+                                    <td>
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#EBE5DC" style="background-color: #EBE5DC;background-image: linear-gradient(#EBE5DC, #EBE5DC);  width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                            <tr>
+                                                <td align="center" valign="top" style="padding: 0; margin: 0;">
+                                                    <!-- %%[ IF @IsClubVW == "True" THEN ]%% -->
+                                                    <table class="container-responsive" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#00437A" style="background-color: #EBE5DC; background-image: linear-gradient(#EBE5DC, #EBE5DC);  width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                                        <tr>
+                                                            <td height="30" style="height: 30px; font-size: 30px; line-height: 30px;">&nbsp;</td>
+                                                            <td width="6%" style="width: 6%;">&nbsp;</td>
+                                                        </tr>
+            
+                                                        <!-- MAIN CONTENT -->
+                                                        <tr>
+                                                            <td align="center" valign="top" style="padding: 0; margin: 0;">
+                                                                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                                                    <tr>
+                                                                        <td align="left" valign="middle" style="padding: 0; margin: 0;">
+                                                                            <!-- IMAGE -->
+                                                                            <!-- %%[ SET @clubVwLogoFooter = concat('https://www.volkswagen.es/es/clientes/beneficios-club-volkswagen.html?adchan=em&country=ES&language=es&campaign=', @campaign, '&publisher=VW&adpl=&adlid=', @adlid, '&adplt=body&format=image&adpay=non-paid&adcr=club-vw-logo-footer&adap=SD|', Format(SystemDateToLocalDate(Now()), "dd/MM/yyyy HH:mm:ss"), '') ]%% -->
+                                                                            <a alias="Club Volkswagen" name="image" href="%%=redirectTo(@clubVwLogoFooter)=%%" style="text-decoration: none;">
+                                                                                <img alt="Club Volkswagen" width="193" style="width: 100%; max-width:193px;" src="https://crm.volkswagen.es/email/2026/marca/t_cross_tactics/img/footer_capsule.png" border="0">
+                                                                            </a>
+                                                                        </td>
+                                                                        <td width="20" style="width: 20px;">&nbsp;</td>
+                                                                        <!-- IMG CONDUCIR SOLO ES EL PRINCIPIO DESKTOP / MOBILE -->
+                                                                        <td align="right" valign="middle" style="padding: 0; margin: 0;">
+                                                                            <img class="footer-desktop-image" alt="Conducir es solo el principio" width="193" style="display: block; width: 100%; max-width: 193px;" src="img/registrado_desktop_footer.jpg" border="0">
+                                                                            <img class="footer-mobile-image" alt="Conducir es solo el principio" width="193" style="display: none; width: 100%; max-width: 193px; mso-hide: all;" src="img/registrado_mobile_footer.jpg" border="0">
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                            <td style="padding: 0; margin: 0;">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td height="30" style="height: 30px; font-size: 30px; line-height: 30px;">&nbsp;</td>
+                                                            <td style="padding: 0; margin: 0;">&nbsp;</td>
+                                                        </tr>
+                                                    </table>
+                                                    <!-- %%[ ELSE ]%% -->
+                                                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#00437A" style="background-color: #EBE5DC; background-image: linear-gradient(#EBE5DC, #EBE5DC); width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                                        <tr>
+                                                            <td width="6%" style="width: 6%;">&nbsp;</td>
+                                                            <td height="30" style="height: 30px; font-size: 30px; line-height: 30px;">&nbsp;</td>
+                                                            <td width="6%" style="width: 6%;">&nbsp;</td>
+                                                        </tr>
+            
+                                                        <!-- MAIN CONTENT -->
+                                                        <tr>
+                                                            <td style="padding: 0; margin: 0;">&nbsp;</td>
+                                                            <td align="center" valign="top" style="padding: 0; margin: 0;">
+                                                                 <img alt="Club Volkswagen" width="193" style="width: 100%; max-width:193px;" align="center" valign="top" src="img/img_siempre_contigo.jpg" border="0">
                                                             </td>
                                                             <td style="padding: 0; margin: 0;">&nbsp;</td>
                                                         </tr>
